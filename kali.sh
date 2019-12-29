@@ -13,6 +13,9 @@ echo "-------------------------------------------------------------------"
 
 sudo apt install glances zsh neovim hexedit exiftool exif qbittorrent chromium-browser openvpn -y
 
+git clone https://github.com/danielmiessler/SecLists.git /root/Documents/ 
+git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git /root/Documents/	
+
 echo "-------------------------------------------------------------------"
 echo "---------- Lots of cool software installed, Next Phase ------------"
 echo "-------------------------------------------------------------------"
