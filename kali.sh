@@ -20,7 +20,24 @@ echo "-------------------------------------------------------------------"
 echo "---------- Lots of cool software installed, Next Phase ------------"
 echo "-------------------------------------------------------------------"
 
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+wget -q https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+chmod +x install.sh
+./install.sh --unattended
+ZSH=${ZSH:-~/.oh-my-zsh}
+#export SHELL="$ZSH"
+# Change default shell to ZSH
+chsh -s /usr/bin/zsh
+#Fix .zsh path, add /root/.loca/bin to PATH
+sed -i '4iexport PATH=$PATH:/root/.local/bin' $HOME/.zshrc
+
+#Change zsh theme
+sed -i -e 's/ZSH_THEME=.*/ZSH_THEME="robbyrussell"/g' $HOME/.zshrc
+
+#add alias in .zshrc
+echo -e 'alias lh="ls -lAh"\nalias la="ls -la"\nalias ll="ls -l"' >> $HOME/.zshrc
+echo -e 'alias g="git"\nalias vim="neovim"' >> $HOME/.zshrc
+rm install.sh
+chsh -s /usr/bin/zsh
 
 echo "-------------------------------------------------------------------"
 echo "---------- Installed Oh-my-zsh, Next Phase ------------"
