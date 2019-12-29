@@ -11,10 +11,26 @@ echo "-------------------------------------------------------------------"
 echo "----- update, upgrade, and dist-upgrade complete, Next Phase ------"
 echo "-------------------------------------------------------------------"
 
-sudo apt install glances zsh neovim hexedit exiftool exif qbittorrent chromium-browser openvpn -y
+apt install glances zsh neovim hexedit exif qbittorrent chromium openvpn -y
 
-git clone https://github.com/danielmiessler/SecLists.git /root/Documents/ 
-git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git /root/Documents/	
+echo "-------------------------------------------------------------------"
+echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
+echo "-------------------------------------------------------------------"
+
+cd /root/Documents/
+
+git clone https://github.com/danielmiessler/SecLists.git 
+
+echo "-------------------------------------------------------------------"
+echo "------------------ Getting SecLists from Github  ------------------"
+echo "-------------------------------------------------------------------"
+
+git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git 
+cd ~
+
+echo "-------------------------------------------------------------------"
+echo "---------   Getting PayloadsalltheThings from Github  -------------"
+echo "-------------------------------------------------------------------"
 
 echo "-------------------------------------------------------------------"
 echo "---------- Lots of cool software installed, Next Phase ------------"
@@ -35,9 +51,16 @@ sed -i -e 's/ZSH_THEME=.*/ZSH_THEME="robbyrussell"/g' $HOME/.zshrc
 
 #add alias in .zshrc
 echo -e 'alias lh="ls -lAh"\nalias la="ls -la"\nalias ll="ls -l"' >> $HOME/.zshrc
-echo -e 'alias g="git"\nalias vim="neovim"' >> $HOME/.zshrc
+echo -e 'alias g="git"\nalias vim="nvim"' >> $HOME/.zshrc
 rm install.sh
 chsh -s /usr/bin/zsh
+
+cd /root/
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+chmod +x firefox_build.sh
+./firefox_build.sh
 
 echo "-------------------------------------------------------------------"
 echo "---------- Installed Oh-my-zsh, Next Phase ------------"
@@ -62,5 +85,5 @@ echo "-------------------------------------------------------------------"
 echo "-------------------- System Clean, Rebooting ----------------------"
 echo "-------------------------------------------------------------------"
 
-sudo reboot
+#sudo reboot
 
