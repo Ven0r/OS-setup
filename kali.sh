@@ -55,12 +55,9 @@ echo -e 'alias g="git"\nalias vim="nvim"' >> $HOME/.zshrc
 rm install.sh
 chsh -s /usr/bin/zsh
 
-cd /root/
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
-chmod +x firefox_build.sh
-./firefox_build.sh
 
 echo "-------------------------------------------------------------------"
 echo "---------- Installed Oh-my-zsh, Next Phase ------------"
@@ -85,5 +82,5 @@ echo "-------------------------------------------------------------------"
 echo "-------------------- System Clean, Rebooting ----------------------"
 echo "-------------------------------------------------------------------"
 
-#sudo reboot
+sudo reboot
 
