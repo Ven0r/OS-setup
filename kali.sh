@@ -17,16 +17,35 @@ echo "-------------------------------------------------------------------"
 echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
 echo "-------------------------------------------------------------------"
 
-cd /root/Documents/
+apt install glances zsh neovim hexedit exif qbittorrent chromium openvpn golang git -y
 
+echo "-------------------------------------------------------------------"
+echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
+echo "-------------------------------------------------------------------"
+
+cd Documents
+
+mkdir Lists
+cd Lists
 git clone https://github.com/danielmiessler/SecLists.git 
+git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git 
+
+cd ..
+mkdir Recon
+
+git clone https://github.com/FortyNorthSecurity/EyeWitness.git
+git clone https://github.com/OWASP/Amass.git
+git clone https://github.com/projectdiscovery/subfinder.git
+git clone https://github.com/OJ/gobuster.git
 
 echo "-------------------------------------------------------------------"
 echo "------------------ Getting SecLists from Github  ------------------"
 echo "-------------------------------------------------------------------"
 
-git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git 
 cd ~
+
+go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
+
 
 echo "-------------------------------------------------------------------"
 echo "---------   Getting PayloadsalltheThings from Github  -------------"

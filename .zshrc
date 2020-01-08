@@ -108,6 +108,28 @@ ipinfo(){
 curl http://ipinfo.io/$1
 }
 
-nscan(){
+scan(){
 nmap -A -T4 -p- $1
+}
+
+
+#Recon on domain
+dns_recon(){
+
+# create target folder
+mkdir /root/Documents/Targets/$1
+# run subfinder on target
+/root/go/bin/subfinder -d $1 -o /root/Documents/Targets/$1/$1_subfinder.txt
+# run massdns on target
+time /root/Documents/Recon/massdns/scripts/subbrute.py /root/Documents/Lists/all.txt $1 | /root/Documents/Recon/massdns/bin/massdns -r /root/Documents/Recon/massdns/lists/new-resolvers.txt -t A -o S -w /root/Documents/Targets/$1/$1_massdns.txt
+
+}
+
+# VPN Access
+vpn(){
+sudo /etc/vpnsecure/vpnsecure
+}
+
+sub(){
+/root/go/bin/subfinder -d $1 -o /root/Documents/Targets/$1_subfinder.txt
 }
