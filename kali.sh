@@ -11,7 +11,6 @@ echo "-------------------------------------------------------------------"
 echo "----- update, upgrade, and dist-upgrade complete, Next Phase ------"
 echo "-------------------------------------------------------------------"
 
-apt install glances zsh neovim hexedit exif qbittorrent chromium openvpn -y
 
 echo "-------------------------------------------------------------------"
 echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
