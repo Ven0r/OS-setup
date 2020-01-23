@@ -22,22 +22,25 @@ echo "-------------------------------------------------------------------"
 echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
 echo "-------------------------------------------------------------------"
 
+cd
 mkdir Haxor
 cd Haxor
 
 mkdir Lists
 cd Lists
 
+wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
 git clone https://github.com/danielmiessler/SecLists.git 
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git 
 
 cd ..
-mkdir Recon
+mkdir Targets
 
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git
 git clone https://github.com/OWASP/Amass.git
 git clone https://github.com/projectdiscovery/subfinder.git
 git clone https://github.com/OJ/gobuster.git
+https://github.com/blechschmidt/massdns.git
 
 echo "-------------------------------------------------------------------"
 echo "------------------ Getting SecLists from Github  ------------------"
