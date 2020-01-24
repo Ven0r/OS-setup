@@ -33,6 +33,7 @@ snap refresh
 
 go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
 go get -v github.com/OJ/gobuster
+go get -v github.com/ffuf/ffuf
 
 echo "-------------------------------------------------------------------"
 echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
