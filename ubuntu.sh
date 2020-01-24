@@ -40,8 +40,8 @@ echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
 echo "-------------------------------------------------------------------"
 
 cd
-mkdir Haxor
-cd Haxor
+mkdir tools
+cd tools 
 
 mkdir Lists
 cd Lists
@@ -64,7 +64,7 @@ echo "-------------------------------------------------------------------"
 echo "------------------ Getting SecLists from Github  ------------------"
 echo "-------------------------------------------------------------------"
 
-cd ~
+cd ~/tools
 
 go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
 
