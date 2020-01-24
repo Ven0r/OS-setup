@@ -11,12 +11,28 @@ echo "-------------------------------------------------------------------"
 echo "----- update, upgrade, and dist-upgrade complete, Next Phase ------"
 echo "-------------------------------------------------------------------"
 
+wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
+tar -xvf go1.13.3.linux-amd64.tar.gz
+mv go /usr/local
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 echo "-------------------------------------------------------------------"
 echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
 echo "-------------------------------------------------------------------"
 
-apt install glances zsh neovim hexedit exif qbittorrent openvpn golang git -y
+apt install glances zsh neovim python3-setuptools hexedit exif qbittorrent snapd openvpn git -y
+
+systemctl enable snapd
+systemctl start snapd
+
+export PATH=$PATH:/snap/bin
+snap install amass
+snap refresh
+
+go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
+go get -v github.com/OJ/gobuster
 
 echo "-------------------------------------------------------------------"
 echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
@@ -37,10 +53,11 @@ cd ..
 mkdir Targets
 
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git
-git clone https://github.com/OWASP/Amass.git
-git clone https://github.com/projectdiscovery/subfinder.git
-git clone https://github.com/OJ/gobuster.git
-https://github.com/blechschmidt/massdns.git
+git clone https://github.com/blechschmidt/massdns.git
+git clone https://github.com/vortexau/dnsvalidator.git
+
+cd massdns
+make
 
 echo "-------------------------------------------------------------------"
 echo "------------------ Getting SecLists from Github  ------------------"
