@@ -26,10 +26,6 @@ systemctl start snapd
 
 snap install amass
 
-go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
-go get -v github.com/OJ/gobuster
-go get -v github.com/ffuf/ffuf
-
 echo "-------------------------------------------------------------------"
 echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
 echo "-------------------------------------------------------------------"
@@ -99,7 +95,13 @@ echo -e 'export GOROOT=/usr/local/go' >> $HOME/.zshrc
 echo -e 'export GOPATH=$HOME/' >> $HOME/.zshrc
 echo -e 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> $HOME/.zshrc
 echo -e 'export PATH=$PATH:/snap/bin' >> $HOME/.zshrc
+
+exec /bin/zsh
 snap refresh
+
+go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
+go get -v github.com/OJ/gobuster
+go get -v github.com/ffuf/ffuf
 
 echo "-------------------------------------------------------------------"
 echo "---------- Installed Oh-my-zsh, Next Phase ------------"
