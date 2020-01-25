@@ -96,9 +96,12 @@ echo -e 'export GOPATH=$HOME/' >> $HOME/.zshrc
 echo -e 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> $HOME/.zshrc
 echo -e 'export PATH=$PATH:/snap/bin' >> $HOME/.zshrc
 
-exec /bin/zsh
 snap refresh
+echo "-------------------------------------------------------------------"
+echo "------------------- Installing Go Toolz ---------------------------"
+echo "-------------------------------------------------------------------"
 
+exec /bin/zsh
 go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
 go get -v github.com/OJ/gobuster
 go get -v github.com/ffuf/ffuf
