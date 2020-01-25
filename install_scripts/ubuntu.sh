@@ -15,15 +15,11 @@ wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
 tar -xvf go1.13.3.linux-amd64.tar.gz
 mv go /usr/local
 
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-
 echo "-------------------------------------------------------------------"
 echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
 echo "-------------------------------------------------------------------"
 
-apt install glances zsh neovim python3-setuptools hexedit exif qbittorrent snapd openvpn git -y
+apt install glances zsh neovim build-essential python3-setuptools hexedit exif qbittorrent snapd openvpn git -y
 
 systemctl enable snapd
 systemctl start snapd
@@ -101,6 +97,9 @@ chsh -s /usr/bin/zsh
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 echo "-------------------------------------------------------------------"
 echo "---------- Installed Oh-my-zsh, Next Phase ------------"
