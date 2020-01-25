@@ -110,7 +110,7 @@ echo "-------------------------------------------------------------------"
 echo "---------- Installed Oh-my-zsh, Next Phase ------------"
 echo "-------------------------------------------------------------------"
 
-ssh-keygen -t rsa -b 4096 -N -C "venor@venor.com" -f venor.pub -q
+ssh-keygen -t rsa -b 4096 -N "" -C "venor@venor.com" -f /root/.ssh/venor -q
 #source bash-vim-setup.sh
 
 echo "Cleaning Up" &&
