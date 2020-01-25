@@ -24,9 +24,7 @@ apt install glances zsh neovim build-essential python3-setuptools hexedit exif q
 systemctl enable snapd
 systemctl start snapd
 
-export PATH=$PATH:/snap/bin
 snap install amass
-snap refresh
 
 go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
 go get -v github.com/OJ/gobuster
@@ -97,9 +95,11 @@ chsh -s /usr/bin/zsh
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+echo -e 'export GOROOT=/usr/local/go' >> $HOME/.zshrc
+echo -e 'export GOPATH=$HOME/' >> $HOME/.zshrc
+echo -e 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> $HOME/.zshrc
+echo -e 'export PATH=$PATH:/snap/bin' >> $HOME/.zshrc
+snap refresh
 
 echo "-------------------------------------------------------------------"
 echo "---------- Installed Oh-my-zsh, Next Phase ------------"

@@ -2,12 +2,12 @@
 
 mkdir -p Targets
 cd Targets
-mkdir $1
+mkdir -p $1
 
 
-amass enum -active -d $1 | tee /root/Haxor/Targets/$1/$1_amass.txt
+amass enum -active -d $1 | tee /root/tools/Targets/$1/$1_amass.txt
 
-subfinder -d $1 | tee /root/Haxor/Targets/$1/$1_subfinder.txt
+subfinder -d $1 | tee /root/tools/Targets/$1/$1_subfinder.txt
 
 #/root/tools/massdns/scripts/subbrute.py /root/tools/Lists/all.txt $1 | massdns -r /root/OS-setup/lists/resolvers.txt -t A -o S -w /root/tools/Targets/$1/$1_massdns.txt
 
