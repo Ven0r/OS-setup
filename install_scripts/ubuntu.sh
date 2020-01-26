@@ -75,8 +75,8 @@ ZSH=${ZSH:-~/.oh-my-zsh}
 #export SHELL="$ZSH"
 # Change default shell to ZSH
 chsh -s /usr/bin/zsh
-#Fix .zsh path, add /root/.loca/bin to PATH
-sed -i '4iexport PATH=$PATH:/root/.local/bin' $HOME/.zshrc
+#Fix .zsh path, add $HOME/.loca/bin to PATH
+sed -i '4iexport PATH=$PATH:$HOME/.local/bin' $HOME/.zshrc
 
 #Change zsh theme
 sed -i -e 's/ZSH_THEME=.*/ZSH_THEME="bira"/g' $HOME/.zshrc
@@ -110,7 +110,7 @@ echo "-------------------------------------------------------------------"
 echo "---------- Installed Oh-my-zsh, Next Phase ------------"
 echo "-------------------------------------------------------------------"
 
-ssh-keygen -t rsa -b 4096 -N "" -C "venor@venor.com" -f /root/.ssh/venor -q
+ssh-keygen -t rsa -b 4096 -N "" -C "venor@venor.com" -f $HOME/.ssh/venor -q
 #source bash-vim-setup.sh
 
 echo "Cleaning Up" &&
