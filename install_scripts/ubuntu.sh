@@ -101,7 +101,11 @@ echo "-------------------------------------------------------------------"
 echo "------------------- Installing Go Toolz ---------------------------"
 echo "-------------------------------------------------------------------"
 
-exec /bin/zsh
+cp $HOME/OS-setup/intall_scripts/configz/.zshr $HOME/
+cp $HOME/OS-setup/intall_scripts/configz/init.vim $HOME/.config/nvim/
+
+source .zshrc
+
 go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
 go get -v github.com/OJ/gobuster
 go get -v github.com/ffuf/ffuf
