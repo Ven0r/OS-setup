@@ -3,9 +3,9 @@
 sudo cp /etc/apt/sources.list /etc/apt/sources-list.bak
 sudo cp sources.list /etc/apt/
 
-apt update
-apt-get upgrade -y
-apt-get dist-upgrade -y
+sudo apt update
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
 
 echo "-------------------------------------------------------------------"
 echo "----- update, upgrade, and dist-upgrade complete, Next Phase ------"
@@ -19,10 +19,10 @@ echo "-------------------------------------------------------------------"
 echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
 echo "-------------------------------------------------------------------"
 
-apt install glances zsh neovim build-essential python3-setuptools hexedit exif qbittorrent snapd openvpn git -y
+sudo apt install glances zsh neovim build-essential python3-setuptools hexedit exif qbittorrent snapd openvpn git -y
 
-systemctl enable snapd
-systemctl start snapd
+sudo systemctl enable snapd
+sudo systemctl start snapd
 
 snap install amass
 
@@ -57,9 +57,6 @@ echo "-------------------------------------------------------------------"
 
 cd ~/tools
 
-go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
-
-
 echo "-------------------------------------------------------------------"
 echo "---------   Getting PayloadsalltheThings from Github  -------------"
 echo "-------------------------------------------------------------------"
@@ -74,7 +71,7 @@ chmod +x install.sh
 ZSH=${ZSH:-~/.oh-my-zsh}
 #export SHELL="$ZSH"
 # Change default shell to ZSH
-chsh -s /usr/bin/zsh
+sudo chsh -s /usr/bin/zsh
 #Fix .zsh path, add $HOME/.loca/bin to PATH
 sed -i '4iexport PATH=$PATH:$HOME/.local/bin' $HOME/.zshrc
 
@@ -86,13 +83,13 @@ echo -e 'alias lh="ls -lAh"\nalias la="ls -la"\nalias ll="ls -l"' >> $HOME/.zshr
 echo -e 'alias g="git"\nalias vim="nvim"' >> $HOME/.zshrc
 
 rm install.sh
-chsh -s /usr/bin/zsh
+sudo chsh -s /usr/bin/zsh
 
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
 echo -e 'export GOROOT=/usr/local/go' >> $HOME/.zshrc
-echo -e 'export GOPATH=$HOME/' >> $HOME/.zshrc
+echo -e 'export GOPATH=$HOME' >> $HOME/.zshrc
 echo -e 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> $HOME/.zshrc
 echo -e 'export PATH=$PATH:/snap/bin' >> $HOME/.zshrc
 
