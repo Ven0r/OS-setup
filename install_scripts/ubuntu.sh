@@ -98,8 +98,8 @@ echo "-------------------------------------------------------------------"
 echo "------------------- Installing Go Toolz ---------------------------"
 echo "-------------------------------------------------------------------"
 
-cp $HOME/OS-setup/intall_scripts/configz/.zshr $HOME/
-cp $HOME/OS-setup/intall_scripts/configz/init.vim $HOME/.config/nvim/
+cp $HOME/OS-setup/install_scripts/configz/.zshrc $HOME/
+cp $HOME/OS-setup/install_scripts/configz/init.vim $HOME/.config/nvim/
 
 source ~/.zshrc
 
