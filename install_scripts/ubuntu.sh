@@ -13,7 +13,6 @@ echo "-------------------------------------------------------------------"
 
 wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
 tar -xvf go1.13.3.linux-amd64.tar.gz
-sudo mv go /usr/local
 
 echo "-------------------------------------------------------------------"
 echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
@@ -107,6 +106,7 @@ go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
 go get -v github.com/OJ/gobuster
 go get -v github.com/ffuf/ffuf
 
+sudo mv go /usr/local
 echo "-------------------------------------------------------------------"
 echo "---------- Installed Oh-my-zsh, Next Phase ------------"
 echo "-------------------------------------------------------------------"
