@@ -13,7 +13,7 @@ echo "-------------------------------------------------------------------"
 
 wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
 tar -xvf go1.13.3.linux-amd64.tar.gz
-mv go /usr/local
+sudo mv go /usr/local
 
 echo "-------------------------------------------------------------------"
 echo "----- Installing zsh, neovim, chrome, openvpn, +more Next Phase ---"
