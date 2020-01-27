@@ -82,7 +82,7 @@ echo -e 'alias lh="ls -lAh"\nalias la="ls -la"\nalias ll="ls -l"' >> $HOME/.zshr
 echo -e 'alias g="git"\nalias vim="nvim"' >> $HOME/.zshrc
 
 rm install.sh
-sudo chsh -s /usr/bin/zsh
+chsh -s /usr/bin/zsh
 
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
