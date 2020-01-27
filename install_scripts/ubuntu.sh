@@ -10,7 +10,7 @@ sudo apt-get dist-upgrade -y
 echo "-------------------------------------------------------------------"
 echo "----- update, upgrade, and dist-upgrade complete, Next Phase ------"
 echo "-------------------------------------------------------------------"
-
+cd ~
 wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
 tar -xvf go1.13.3.linux-amd64.tar.gz
 
@@ -68,10 +68,11 @@ wget -q https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/in
 chmod +x install.sh
 ./install.sh --unattended
 ZSH=${ZSH:-~/.oh-my-zsh}
+
 #export SHELL="$ZSH"
 # Change default shell to ZSH
-sudo chsh -s /usr/bin/zsh
-#Fix .zsh path, add $HOME/.loca/bin to PATH
+chsh -s /usr/bin/zsh
+#Fix .zsh path, add $HOME/.local/bin to PATH
 sed -i '4iexport PATH=$PATH:$HOME/.local/bin' $HOME/.zshrc
 
 #Change zsh theme
