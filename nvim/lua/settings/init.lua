@@ -1,3 +1,6 @@
+vim.cmd[[autocmd BufWinLeave *.* mkview]]
+vim.cmd[[autocmd BufWinEnter *.* silent! loadview]]
+
 local set = vim.opt
 
 set.expandtab = true

@@ -5,4 +5,3 @@ require('colorschemes-config.nightfox')
 require('nvim-tree-config')
 require('mappings')
 require('cmp-config')
-
