@@ -103,6 +103,7 @@ alias la="ls -la"
 alias ll="ls -l"
 alias g="git"
 alias vim="nvim"
+alias v="nvim"
 
 ipinfo(){
 curl http://ipinfo.io/$1
