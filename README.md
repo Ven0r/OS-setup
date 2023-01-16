@@ -1,6 +1,12 @@
 # OS-setup
 Fresh image scripts
 
+You must install fresh Neovim install from:
+```
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+```
 
 For nvim you must install packer:
 ```
